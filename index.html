@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exam 1 Study Guide — Chapters 1–3</title>
+<style>
+  :root{
+    --bg:#fff;
+    --fg:#111;
+    --muted:#6d6d6d;
+    --line:#e9e9e9;
+    --soft:#f7f7f7;
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height:1.45;
+  }
+  button{font:inherit;color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 24px 80px}
+  .top{
+    position:sticky;top:0;z-index:20;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{max-width:1080px;margin:0 auto;padding:18px 24px 14px}
+  .title-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+  h1{font-size:clamp(30px,4vw,48px);line-height:1.04;margin:0;font-weight:760;letter-spacing:-.035em}
+  .sub{font-size:14px;color:var(--muted);margin-top:6px}
+  .progress{min-width:140px;text-align:right;font-size:13px;color:var(--muted)}
+  .progress strong{color:var(--fg);font-weight:650}
+  .progress-line{height:2px;background:var(--line);margin-top:8px;overflow:hidden}
+  .progress-fill{height:100%;width:0;background:var(--fg);transition:width .25s ease}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+  .chip,.mode-btn,.reset-btn{
+    border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;cursor:pointer;
+    transition:.16s ease;
+  }
+  .chip:hover,.mode-btn:hover,.reset-btn:hover{border-color:#cfcfcf}
+  .chip.active,.mode-btn.active{background:#111;color:#fff;border-color:#111}
+  .controls-spacer{flex:1}
+  section{padding-top:56px}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px}
+  h2{font-size:22px;margin:0;font-weight:720;letter-spacing:-.02em}
+  .section-count{font-size:13px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .card{
+    position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 16px;background:#fff;
+    min-height:172px;transition:border-color .16s ease, transform .16s ease;
+  }
+  .card:hover{border-color:#d8d8d8}
+  .card-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+  .term{font-size:19px;line-height:1.15;font-weight:700;letter-spacing:-.02em}
+  .mark{
+    width:30px;height:30px;flex:0 0 30px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;
+    display:grid;place-items:center;color:#999;transition:.16s ease;
+  }
+  .mark:hover{border-color:#bbb;color:#555}
+  .card.known .mark{background:#111;color:#fff;border-color:#111}
+  .definition{font-size:15px;margin-top:12px;color:#252525}
+  .mini{font-size:13px;color:var(--muted);margin-top:8px}
+  .example-toggle{
+    margin-top:18px;border:0;background:transparent;padding:0;cursor:pointer;font-weight:620;font-size:13px;
+    text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;
+  }
+  .example{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:#333}
+  .card.example-open .example{display:block}
+  .card.example-open .example-toggle .show{display:none}
+  .card:not(.example-open) .example-toggle .hide{display:none}
+
+  .recall .definition,.recall .mini{filter:blur(7px);user-select:none;transition:filter .18s ease}
+  .recall .card.revealed .definition,.recall .card.revealed .mini{filter:none;user-select:text}
+  .recall .card{cursor:pointer}
+  .recall .card .example-toggle,.recall .card .mark{cursor:pointer}
+  .recall .recall-label{display:block}
+  .recall-label{display:none;margin-top:12px;font-size:12px;color:var(--muted)}
+
+  .hidden{display:none!important}
+  @media (max-width:760px){
+    .grid{grid-template-columns:1fr}
+    .title-row{align-items:flex-start;flex-direction:column}
+    .progress{text-align:left;min-width:0;width:100%}
+  }
+  @media print{
+    .top{position:static;border-bottom:0}
+    .controls,.mark,.example-toggle,.progress{display:none!important}
+    .wrap{max-width:none;padding:18px}
+    section{padding-top:28px}
+    .grid{grid-template-columns:1fr 1fr}
+    .example{display:block!important}
+    .card{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="title-row">
+      <div>
+        <h1>Exam 1 Study Guide</h1>
+        <div class="sub">Chapters 1–3</div>
+      </div>
+      <div class="progress">
+        <div><strong id="knownCount">0</strong> / <span id="totalCount">0</span></div>
+        <div class="progress-line"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="1">Chapter 1</button>
+      <button class="chip" data-filter="2">Chapter 2</button>
+      <button class="chip" data-filter="3">Chapter 3</button>
+      <span class="controls-spacer"></span>
+      <button class="mode-btn" id="recallBtn">Recall mode</button>
+      <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="guide">
+  <section data-chapter="1">
+    <div class="section-head"><h2>Chapter 1</h2><div class="section-count">Development, research, theories</div></div>
+    <div class="grid">
+      <article class="card"><div class="card-top"><div class="term">Multidimensional development</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Development occurs across physical, cognitive, and social-emotional domains.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A preschooler becomes better at balancing on one foot, learns to count higher, and becomes more comfortable playing cooperatively with classmates.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Developmental cascade</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">A change in one area can produce changes in another area.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">As a child’s language improves, they can explain what they want more clearly, which may reduce frustration during interactions with others.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Plasticity</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Development can change in response to experience.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child who initially has difficulty reading becomes much more skilled after receiving targeted instruction over time.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Multicontextual development</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Development is influenced by multiple settings and circumstances.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child’s experience is shaped by expectations at home, relationships with classmates, community resources, and cultural beliefs.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Multidirectional development</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Development can involve gains in some areas while other abilities remain stable or decline.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A teenager becomes faster at solving abstract problems while becoming less interested in activities they enjoyed as a younger child.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Continuous development</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Development occurs gradually over time.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child’s handwriting slowly becomes more controlled and precise across several years.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Discontinuous development</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Development occurs through qualitatively different stages.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A theorist argues that children’s reasoning changes in distinct ways rather than simply becoming gradually faster or more accurate.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Active development</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Children help shape their own developmental experiences.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A curious child repeatedly takes apart old toys to figure out how they work and learns through that exploration.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Observation</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Researchers watch and record behavior without manipulating a variable.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A researcher sits in a preschool classroom and records how often children enter ongoing group play.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Experiment</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Researchers manipulate an independent variable and measure a dependent variable.</div><div class="mini">Independent variable = changed · Dependent variable = measured outcome</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Researchers randomly assign children to two different memory-training activities and compare their later recall.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Case study</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">One person or situation is studied in great depth.</div><div class="mini">Major limitation: limited generalizability</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A developmental psychologist closely studies one child who experienced an extremely unusual form of early sensory deprivation.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Longitudinal research</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The same people are measured repeatedly over time.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Researchers begin studying a group of 3-year-olds and return to assess those same children every two years.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Cross-sectional research</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Different groups are compared at one point in time.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Researchers compare a group of 4-year-olds, 8-year-olds, and 12-year-olds during the same semester.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Sequential research</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Several age groups are studied and then followed over time.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Researchers begin with several age groups and then continue following each group over time.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Microsystem</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">People and settings the child interacts with directly.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child’s daily interactions with a soccer coach.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Mesosystem</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Connections between parts of the child’s microsystem.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child’s after-school program begins coordinating regularly with the child’s family.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Exosystem</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Settings that affect the child indirectly.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A parent’s employer changes work schedules, which changes when the parent is available at home.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Macrosystem</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Broader cultural values, beliefs, laws, and social expectations.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Cultural beliefs about how much independence children should have influence parenting practices.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Chronosystem</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The role of time, transitions, and historical circumstances in development.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child grows up during a major period of technological or social change that alters everyday childhood experiences.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Positive reinforcement</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Something desirable is added after a behavior, making that behavior more likely.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child receives a sticker whenever they put away their materials, and they begin cleaning up more consistently.</div></article>
+    </div>
+  </section>
+
+  <section data-chapter="2">
+    <div class="section-head"><h2>Chapter 2</h2><div class="section-count">Heredity, prenatal development</div></div>
+    <div class="grid">
+      <article class="card"><div class="card-top"><div class="term">Passive genotype–environment correlation</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Parents provide both genes and an environment related to those genes.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Parents who are naturally strong readers pass on characteristics related to language ability and also fill their home with books.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Evocative genotype–environment correlation</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">A child’s characteristics draw out responses from other people.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A highly persistent child causes adults to give them increasingly challenging activities.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Active genotype–environment correlation</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">A child actively selects environments that fit their tendencies.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child who enjoys physical activity chooses to spend lunch playing basketball rather than sitting indoors.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Genotype–environment interaction</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The same environment can have different effects depending on genetic susceptibility.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Two children experience the same highly demanding environment, but it produces much greater anxiety in the child with greater biological susceptibility.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Epigenetics</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Environmental conditions can affect gene expression without changing the DNA sequence itself.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">An environmental experience changes the activity of genes without changing the underlying DNA sequence itself.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Mitosis</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Cell division that produces two genetically identical body cells.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">As a child grows taller, body cells reproduce to create additional cells.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Meiosis</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Cell division that produces sperm or egg cells with half the usual chromosome number.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Before conception occurs, reproductive cells are produced with only half of the usual chromosome number.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Genotype</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The genetic information a person inherits.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Someone carries genetic information associated with a trait, whether or not that trait is visibly expressed.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Phenotype</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The characteristics that are actually expressed or observable.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">The visible or measurable form of an inherited characteristic is the phenotype.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Heterozygous</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Having two different versions of a gene.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A person inherits one dominant allele and one recessive allele for the same characteristic.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Down syndrome / Trisomy 21</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">A chromosomal condition caused by an extra chromosome 21.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A karyogram shows three copies of chromosome 21.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Germinal period</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Conception through implantation, roughly the first two weeks.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Several days after fertilization, a rapidly dividing group of cells is approaching the uterus.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Embryonic period</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The period when major body structures begin to form.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">At five weeks, the basic foundations of several major organs are being established.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Fetal period</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Week 9 through birth, with continued growth and maturation of major structures.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">At six months, many basic structures already exist and are continuing to grow and mature.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Age of viability</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The point at which survival outside the uterus first becomes possible, around 24 weeks.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Doctors are discussing whether a very early fetus has reached the point at which survival outside the uterus may be possible with intensive medical care.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Teratogens</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Environmental factors that can interfere with prenatal development.</div><div class="mini">Risk depends on timing, amount, multiple exposures, and susceptibility.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Two prenatal exposures occur at different points in pregnancy, and the earlier exposure affects a structure that was forming at that particular time.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Ultrasound</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Uses sound waves to examine the fetus.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A clinician uses sound waves to check fetal growth and position.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Amniocentesis</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">A small sample of amniotic fluid is collected for diagnostic testing.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A clinician collects a small sample of the fluid surrounding the fetus for diagnostic testing.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Chorionic villus sampling</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">A small sample of placental tissue is collected for genetic testing.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A clinician obtains a small sample of placental tissue for genetic analysis.</div></article>
+    </div>
+  </section>
+
+  <section data-chapter="3">
+    <div class="section-head"><h2>Chapter 3</h2><div class="section-count">Birth, newborn assessment</div></div>
+    <div class="grid">
+      <article class="card"><div class="card-top"><div class="term">First stage of labor</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The cervix dilates as contractions become stronger and closer together.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Contractions are becoming more frequent while the cervix progresses from 4 centimeters to 8 centimeters dilated.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Second stage of labor</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The baby moves through the birth canal and is delivered.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">The cervix is fully dilated and pushing begins as the infant moves toward delivery.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Third stage of labor</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The placenta and remaining fetal membranes are delivered.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Several minutes after the infant is born, the remaining fetal membranes and placenta are expelled.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Braxton-Hicks contractions</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Irregular contractions that do not progress like true labor.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Late in pregnancy, contractions occur irregularly and then disappear rather than steadily increasing.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">True labor</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Contractions become progressively longer, stronger, and closer together.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Contractions become progressively longer, stronger, and closer together over time.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Induction</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Labor is medically started rather than beginning on its own.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Pregnancy has progressed well beyond the expected due date, so medication is used to begin labor.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Cesarean section</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">The baby is surgically delivered through the mother’s abdomen.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">During labor, clinicians determine that the infant cannot safely be delivered vaginally and perform surgery to deliver the baby.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Lamaze</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Controlled breathing, relaxation, a focal point, and support-person coaching.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Expectant parents practice patterned breathing and focusing attention while a partner learns how to provide support.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Bradley Method</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Natural childbirth preparation emphasizing relaxation and partner coaching.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A couple prepares for an unmedicated birth with substantial emphasis on relaxation and partner coaching.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Hypnobirthing</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Preparation aimed at reducing fear and tension through relaxation, breathing, support, and education.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Preparation focuses on reducing fear and tension through relaxation, breathing, and education.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Alexander Technique</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Emphasizes posture, movement, and conscious control of physical responses.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Preparation emphasizes posture, movement, and changing habitual physical responses to discomfort.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Apgar assessment</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">A quick assessment of the newborn’s immediate physical condition, repeated shortly after birth.</div><div class="mini">Heart rate · respiration · muscle tone · reflex response · color</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Immediately after delivery, a clinician quickly evaluates several signs of how well an infant is making the transition to life outside the uterus, then repeats the evaluation a few minutes later.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">NBAS</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">A more detailed assessment of newborn motor behavior, muscle tone, and stress response.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">After the immediate post-birth period, a clinician conducts a more detailed assessment of how a newborn moves and responds to stimulation and stress.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Preterm</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Born before 37 weeks of gestation.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">An infant is delivered several weeks before the pregnancy has reached 37 weeks.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Low birth weight</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Birth weight below 5 pounds 8 ounces.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A newborn reaches full term but weighs considerably less than 5 pounds 8 ounces.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Small-for-date</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">Birth weight is lower than expected for the infant’s gestational age.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A baby reaches 39 weeks but weighs much less than would normally be expected for that gestational age.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Postmature</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">A pregnancy continuing to about 42 weeks or later.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A pregnancy continues beyond 42 weeks.</div></article>
+
+      <article class="card"><div class="card-top"><div class="term">Anoxia</div><button class="mark" aria-label="Mark known">✓</button></div><div class="definition">A temporary lack of oxygen to the brain.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A complication temporarily interrupts the infant’s oxygen supply around the time of delivery.</div></article>
+    </div>
+  </section>
+</main>
+
+<script>
+(() => {
+  const guide = document.getElementById('guide');
+  const cards = [...document.querySelectorAll('.card')];
+  const sections = [...document.querySelectorAll('section[data-chapter]')];
+  const chips = [...document.querySelectorAll('.chip')];
+  const recallBtn = document.getElementById('recallBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const knownCount = document.getElementById('knownCount');
+  const totalCount = document.getElementById('totalCount');
+  const progressFill = document.getElementById('progressFill');
+
+  totalCount.textContent = cards.length;
+
+  function updateProgress(){
+    const known = cards.filter(c => c.classList.contains('known')).length;
+    knownCount.textContent = known;
+    progressFill.style.width = `${(known/cards.length)*100}%`;
+  }
+
+  document.addEventListener('click', (e) => {
+    const mark = e.target.closest('.mark');
+    if (mark){
+      e.stopPropagation();
+      mark.closest('.card').classList.toggle('known');
+      updateProgress();
+      return;
+    }
+    const toggle = e.target.closest('.example-toggle');
+    if (toggle){
+      e.stopPropagation();
+      toggle.closest('.card').classList.toggle('example-open');
+      return;
+    }
+    const card = e.target.closest('.card');
+    if (card && guide.classList.contains('recall')){
+      card.classList.toggle('revealed');
+    }
+  });
+
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    chips.forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const filter = chip.dataset.filter;
+    sections.forEach(section => {
+      section.classList.toggle('hidden', filter !== 'all' && section.dataset.chapter !== filter);
+    });
+    window.scrollTo({top:0,behavior:'smooth'});
+  }));
+
+  recallBtn.addEventListener('click', () => {
+    const on = guide.classList.toggle('recall');
+    recallBtn.classList.toggle('active', on);
+    cards.forEach(c => c.classList.remove('revealed'));
+  });
+
+  resetBtn.addEventListener('click', () => {
+    cards.forEach(c => c.classList.remove('known','revealed','example-open'));
+    guide.classList.remove('recall');
+    recallBtn.classList.remove('active');
+    chips.forEach(c => c.classList.toggle('active', c.dataset.filter === 'all'));
+    sections.forEach(s => s.classList.remove('hidden'));
+    updateProgress();
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  updateProgress();
+})();
+</script>
+</body>
+</html>
