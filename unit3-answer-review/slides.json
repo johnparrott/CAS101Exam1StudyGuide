@@ -1,0 +1,807 @@
+{
+  "unit": 3,
+  "course": "CAS 101",
+  "autoplay": false,
+  "slides": [
+    {
+      "number": 1,
+      "question": "Compared with infancy, physical growth during early childhood generally:",
+      "options": [
+        "continues at exactly the same rate",
+        "stops until the beginning of puberty",
+        "slows as body proportions become more adultlike",
+        "accelerates as the head becomes proportionally larger"
+      ],
+      "correct": "C",
+      "label": "Question 1",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 2,
+      "question": "A preschooler eats less than during toddlerhood. Which response best supports healthy eating habits?",
+      "options": [
+        "Offer balanced meals without pressuring the child to eat",
+        "Let the child snack continuously instead of eating meals",
+        "Offer dessert as a reward for eating vegetables",
+        "Require the child to finish every serving"
+      ],
+      "correct": "A",
+      "label": "Question 2",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 3,
+      "question": "A child's growing ability to plan actions and control emotional outbursts is most closely linked to maturation of the:",
+      "options": [
+        "primary visual cortex",
+        "auditory cortex",
+        "occipital lobe",
+        "prefrontal cortex"
+      ],
+      "correct": "D",
+      "label": "Question 3",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 4,
+      "question": "The corpus callosum contributes to development by:",
+      "options": [
+        "storing all long-term memories",
+        "controlling only the sense of smell",
+        "connecting the brain's two hemispheres",
+        "producing hormones that control height"
+      ],
+      "correct": "C",
+      "label": "Question 4",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 5,
+      "question": "Which activity primarily gives a preschooler practice using gross motor skills?",
+      "options": [
+        "Hopping through an outdoor obstacle course",
+        "Drawing a face with a crayon",
+        "Threading small beads onto a string",
+        "Fastening buttons on a shirt"
+      ],
+      "correct": "A",
+      "label": "Question 5",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 6,
+      "question": "A teacher wants to strengthen preschoolers' fine motor skills. Which activity is most appropriate?",
+      "options": [
+        "Using play dough and child-safe scissors",
+        "Running relay races outdoors",
+        "Balancing on one foot",
+        "Jumping over low markers"
+      ],
+      "correct": "A",
+      "label": "Question 6",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 7,
+      "question": "A child suddenly screams during deep NREM sleep early in the night and is difficult to awaken. This best illustrates:",
+      "options": [
+        "an episode of daytime daydreaming",
+        "a sleep terror",
+        "intentional bedtime refusal",
+        "a REM nightmare"
+      ],
+      "correct": "B",
+      "label": "Question 7",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 8,
+      "question": "Which observation is the strongest sign that a child may be ready to begin toilet training?",
+      "options": [
+        "Reaching a birthday regardless of physical readiness",
+        "Staying dry for two hours and following simple directions",
+        "Having a sibling who was trained at the same age",
+        "Being able to recite the entire alphabet"
+      ],
+      "correct": "B",
+      "label": "Question 8",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 9,
+      "question": "Repeated urination into bed or clothing after age five is referred to in the chapter as:",
+      "options": [
+        "somnambulism",
+        "encopresis",
+        "enuresis",
+        "animism"
+      ],
+      "correct": "C",
+      "label": "Question 9",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 10,
+      "question": "A preschooler asks a question about private body parts. Which caregiver response best fits the chapter?",
+      "options": [
+        "Ignore all questions about body safety",
+        "Scold the child for showing curiosity",
+        "Tell the child that body questions are always wrong",
+        "Give a calm answer and teach privacy without shame"
+      ],
+      "correct": "D",
+      "label": "Question 10",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 11,
+      "question": "Which routine helps prevent tooth decay during early childhood?",
+      "options": [
+        "Replacing brushing with sugary mouth rinses",
+        "Brushing teeth regularly with fluoride toothpaste",
+        "Avoiding dental visits when there is no pain",
+        "Waiting until adult teeth appear to begin brushing"
+      ],
+      "correct": "B",
+      "label": "Question 11",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 12,
+      "question": "What distinguishes a food allergy from simply disliking a food?",
+      "options": [
+        "The food has an unfamiliar texture",
+        "The child prefers another food's color",
+        "The child is bored with a familiar meal",
+        "The immune system reacts to a particular food"
+      ],
+      "correct": "D",
+      "label": "Question 12",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 13,
+      "question": "Which plan best reduces a preschooler's risk of accidental poisoning?",
+      "options": [
+        "Rely on a warning label the child cannot read",
+        "Store medicines in an unlocked low drawer",
+        "Lock medicines and cleaners in their original containers",
+        "Keep cleaners in unmarked drink bottles"
+      ],
+      "correct": "C",
+      "label": "Question 13",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 14,
+      "question": "During Piaget's preoperational stage, a child uses a wooden block as a pretend telephone. This demonstrates:",
+      "options": [
+        "conservation of liquid",
+        "symbolic representation",
+        "formal hypothetical reasoning",
+        "reversible mental operations"
+      ],
+      "correct": "B",
+      "label": "Question 14",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 15,
+      "question": "A child assumes that a classmate looking at a model from the opposite side sees exactly what the child sees. This illustrates:",
+      "options": [
+        "scaffolding",
+        "conservation",
+        "fast-mapping",
+        "egocentrism"
+      ],
+      "correct": "D",
+      "label": "Question 15",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 16,
+      "question": "A preschooler says a bicycle is lonely because no one has ridden it today. This is an example of:",
+      "options": [
+        "animism",
+        "delayed gratification",
+        "selective attention",
+        "overregularization"
+      ],
+      "correct": "A",
+      "label": "Question 16",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 17,
+      "question": "A child judges which glass holds more juice by looking only at height and ignoring width. This focus is called:",
+      "options": [
+        "centration",
+        "cooperative play",
+        "accommodation",
+        "autobiographical memory"
+      ],
+      "correct": "A",
+      "label": "Question 17",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 18,
+      "question": "Water is poured from a short, wide glass into a tall, narrow one. Recognizing that the amount stays the same demonstrates:",
+      "options": [
+        "syncretism",
+        "egocentrism",
+        "conservation",
+        "animism"
+      ],
+      "correct": "C",
+      "label": "Question 18",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 19,
+      "question": "A child cannot complete a puzzle alone but succeeds with a teacher's guidance. The task falls within the child's:",
+      "options": [
+        "sensory memory register",
+        "fixed level of independent mastery",
+        "zone of proximal development",
+        "categorical self"
+      ],
+      "correct": "C",
+      "label": "Question 19",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 20,
+      "question": "A teacher gives hints while a child learns a task, then gradually removes the hints. This teaching method is:",
+      "options": [
+        "scaffolding",
+        "centration",
+        "overregularization",
+        "syncretism"
+      ],
+      "correct": "A",
+      "label": "Question 20",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 21,
+      "question": "While solving a puzzle, a child says, \"Turn this piece. Try that corner.\" Vygotsky viewed this private speech as helping the child:",
+      "options": [
+        "guide thinking and solve problems",
+        "avoid forming internal speech",
+        "replace all interaction with other people",
+        "prove that language prevents learning"
+      ],
+      "correct": "A",
+      "label": "Question 21",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 22,
+      "question": "A child stops an impulsive response and switches to a new rule during a game. These abilities are examples of:",
+      "options": [
+        "executive function",
+        "syncretism",
+        "gender role learning",
+        "animistic thinking"
+      ],
+      "correct": "A",
+      "label": "Question 22",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 23,
+      "question": "A child holds a short set of directions in mind while carrying them out. Which memory system is most directly involved?",
+      "options": [
+        "nondeclarative skill memory",
+        "autobiographical memory",
+        "semantic long-term memory",
+        "working memory"
+      ],
+      "correct": "D",
+      "label": "Question 23",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 24,
+      "question": "A child hears a new word briefly and connects it to a familiar concept. This rapid word-learning process is called:",
+      "options": [
+        "conservation",
+        "response inhibition",
+        "fast-mapping",
+        "centration"
+      ],
+      "correct": "C",
+      "label": "Question 24",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 25,
+      "question": "A preschooler says \"I goed home\" after learning the rule for adding -ed to past-tense verbs. This illustrates:",
+      "options": [
+        "animism",
+        "conservation",
+        "egocentrism",
+        "overregularization"
+      ],
+      "correct": "D",
+      "label": "Question 25",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 26,
+      "question": "Maya leaves a toy in a basket. While she is away, it is moved to a box. A child predicts Maya will look in the basket. This demonstrates understanding of:",
+      "options": [
+        "conservation of quantity",
+        "another person's false belief",
+        "the child's own sensory memory",
+        "animism in pretend play"
+      ],
+      "correct": "B",
+      "label": "Question 26",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 27,
+      "question": "Which approach to supporting a child with autism spectrum disorder best matches the chapter?",
+      "options": [
+        "Wait until adulthood before offering support",
+        "Focus on eliminating every personal interest",
+        "Provide early support tailored to the child's needs",
+        "Use the same program for every child regardless of needs"
+      ],
+      "correct": "C",
+      "label": "Question 27",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 28,
+      "question": "A preschooler says, \"I have curly hair and I like painting.\" This description is primarily an expression of:",
+      "options": [
+        "delayed gratification",
+        "self-esteem",
+        "conscience",
+        "self-concept"
+      ],
+      "correct": "D",
+      "label": "Question 28",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 29,
+      "question": "A child chooses to wait for two crackers later rather than take one cracker immediately. This illustrates:",
+      "options": [
+        "animism",
+        "delayed gratification",
+        "centration",
+        "gender constancy"
+      ],
+      "correct": "B",
+      "label": "Question 29",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 30,
+      "question": "A caregiver encourages a preschooler to plan a pretend store and praises the effort despite mistakes. This most directly supports Erikson's:",
+      "options": [
+        "trust versus mistrust",
+        "industry versus inferiority",
+        "autonomy versus shame and doubt",
+        "initiative versus guilt"
+      ],
+      "correct": "D",
+      "label": "Question 30",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 31,
+      "question": "A child learns cultural expectations about toys and activities by watching others and receiving praise. This most directly illustrates:",
+      "options": [
+        "gender role socialization",
+        "autobiographical memory",
+        "conservation of number",
+        "an inherited rule for all preferences"
+      ],
+      "correct": "A",
+      "label": "Question 31",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 32,
+      "question": "A parent listens to a child's feelings, explains rules, and consistently enforces reasonable limits. This is which parenting style?",
+      "options": [
+        "authoritarian",
+        "authoritative",
+        "uninvolved",
+        "permissive"
+      ],
+      "correct": "B",
+      "label": "Question 32",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 33,
+      "question": "A parent demands unquestioning obedience, discourages discussion, and shows little warmth. This is which parenting style?",
+      "options": [
+        "permissive",
+        "authoritative",
+        "uninvolved",
+        "authoritarian"
+      ],
+      "correct": "D",
+      "label": "Question 33",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 34,
+      "question": "A parent is warm and responsive but allows a preschooler to set nearly all rules and provides few limits. This is which parenting style?",
+      "options": [
+        "uninvolved",
+        "authoritative",
+        "permissive",
+        "authoritarian"
+      ],
+      "correct": "C",
+      "label": "Question 34",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 35,
+      "question": "Which feature is a useful indicator of high-quality child care?",
+      "options": [
+        "Long periods without supervision",
+        "Responsive teachers and manageable group sizes",
+        "Large groups with minimal adult attention",
+        "Frequent staff turnover and little interaction"
+      ],
+      "correct": "B",
+      "label": "Question 35",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 36,
+      "question": "Two children play beside each other with similar blocks but do not directly interact. According to Parten, this is:",
+      "options": [
+        "onlooker play",
+        "cooperative play",
+        "parallel play",
+        "associative play"
+      ],
+      "correct": "C",
+      "label": "Question 36",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 37,
+      "question": "Children share crayons and talk while drawing their own unrelated pictures, without a common goal. According to Parten, this is:",
+      "options": [
+        "solitary play",
+        "associative play",
+        "cooperative play",
+        "parallel play"
+      ],
+      "correct": "B",
+      "label": "Question 37",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 38,
+      "question": "Children assign roles and work together to build a pretend restaurant. According to Parten, this is:",
+      "options": [
+        "onlooker play",
+        "cooperative play",
+        "unoccupied play",
+        "parallel play"
+      ],
+      "correct": "B",
+      "label": "Question 38",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 39,
+      "question": "A child avoids hurting others because doing so conflicts with the child's internal standards of right and wrong. This reflects the development of:",
+      "options": [
+        "centration",
+        "animism",
+        "fast-mapping",
+        "conscience"
+      ],
+      "correct": "D",
+      "label": "Question 39",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    },
+    {
+      "number": 40,
+      "question": "Which factor can help lessen the effects of prolonged severe stress on a young child?",
+      "options": [
+        "Support from a caring and dependable adult",
+        "Using humiliation to discourage distress",
+        "Requiring the child to cope entirely alone",
+        "Removing all predictable daily routines"
+      ],
+      "correct": "A",
+      "label": "Question 40",
+      "theme": "light",
+      "background": "#fff",
+      "captionWidth": 1000,
+      "captionPosition": "top-left",
+      "type": "image",
+      "src": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\"/%3E",
+      "title": "",
+      "text": ""
+    }
+  ]
+}
