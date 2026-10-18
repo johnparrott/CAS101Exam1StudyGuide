@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Unit 3 Study Guide — Early Childhood — Chapters 7–9</title>
+<style>
+  :root{
+    --bg:#fff;
+    --fg:#111;
+    --muted:#6d6d6d;
+    --line:#e9e9e9;
+    --soft:#f7f7f7;
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height:1.45;
+  }
+  button{font:inherit;color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 24px 80px}
+  .top{
+    position:sticky;top:0;z-index:20;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{max-width:1080px;margin:0 auto;padding:18px 24px 14px}
+  .title-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+  h1{font-size:clamp(30px,4vw,48px);line-height:1.04;margin:0;font-weight:760;letter-spacing:-.035em}
+  .sub{font-size:14px;color:var(--muted);margin-top:6px}
+  .progress{min-width:140px;text-align:right;font-size:13px;color:var(--muted)}
+  .progress strong{color:var(--fg);font-weight:650}
+  .progress-line{height:2px;background:var(--line);margin-top:8px;overflow:hidden}
+  .progress-fill{height:100%;width:0;background:var(--fg);transition:width .25s ease}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+  .chip,.mode-btn,.reset-btn{
+    border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;cursor:pointer;
+    transition:.16s ease;
+  }
+  .chip:hover,.mode-btn:hover,.reset-btn:hover{border-color:#cfcfcf}
+  .chip.active,.mode-btn.active{background:#111;color:#fff;border-color:#111}
+  .controls-spacer{flex:1}
+  section{padding-top:56px}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px}
+  h2{font-size:22px;margin:0;font-weight:720;letter-spacing:-.02em}
+  .section-count{font-size:13px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .card{
+    position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 16px;background:#fff;
+    min-height:172px;transition:border-color .16s ease, transform .16s ease;
+  }
+  .card:hover{border-color:#d8d8d8}
+  .card-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+  .term{font-size:19px;line-height:1.15;font-weight:700;letter-spacing:-.02em}
+  .mark{
+    width:30px;height:30px;flex:0 0 30px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;
+    display:grid;place-items:center;color:#999;transition:.16s ease;
+  }
+  .mark:hover{border-color:#bbb;color:#555}
+  .card.known .mark{background:#111;color:#fff;border-color:#111}
+  .definition{font-size:15px;margin-top:12px;color:#252525}
+  .mini{font-size:13px;color:var(--muted);margin-top:8px}
+  .example-toggle{
+    margin-top:18px;border:0;background:transparent;padding:0;cursor:pointer;font-weight:620;font-size:13px;
+    text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;
+  }
+  .example{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:#333}
+  .card.example-open .example{display:block}
+  .card.example-open .example-toggle .show{display:none}
+  .card:not(.example-open) .example-toggle .hide{display:none}
+
+  .recall .definition,.recall .mini{filter:blur(7px);user-select:none;transition:filter .18s ease}
+  .recall .card.revealed .definition,.recall .card.revealed .mini{filter:none;user-select:text}
+  .recall .card{cursor:pointer}
+  .recall .card .example-toggle,.recall .card .mark{cursor:pointer}
+  .recall .recall-label{display:block}
+  .recall-label{display:none;margin-top:12px;font-size:12px;color:var(--muted)}
+
+  .hidden{display:none!important}
+  @media (max-width:760px){
+    .grid{grid-template-columns:1fr}
+    .title-row{align-items:flex-start;flex-direction:column}
+    .progress{text-align:left;min-width:0;width:100%}
+  }
+  .card:focus-visible,button:focus-visible{outline:2px solid #111;outline-offset:4px}
+  @media (max-width:760px){.section-head{align-items:flex-start;flex-direction:column;gap:6px}}
+  @media print{
+    .recall .definition,.recall .mini{filter:none!important}
+    .hidden{display:block!important}
+    .recall-label{display:none!important}
+    .top{position:static;border-bottom:0}
+    .controls,.mark,.example-toggle,.progress{display:none!important}
+    .wrap{max-width:none;padding:18px}
+    section{padding-top:28px}
+    .grid{grid-template-columns:1fr 1fr}
+    .example{display:block!important}
+    .card{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="title-row">
+      <div>
+        <h1>Unit 3 Study Guide</h1>
+        <div class="sub">Early Childhood · Chapters 7–9</div>
+      </div>
+      <div class="progress">
+        <div><strong id="knownCount">0</strong> / <span id="totalCount">0</span></div>
+        <div class="progress-line"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="7">Chapter 7</button>
+      <button class="chip" data-filter="8">Chapter 8</button>
+      <button class="chip" data-filter="9">Chapter 9</button>
+      <span class="controls-spacer"></span>
+      <button class="mode-btn" id="recallBtn">Recall mode</button>
+      <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="guide"><section data-chapter="7"><div class="section-head"><h2>Chapter 7</h2><div class="section-count">Physical development, health, motor skills</div></div><div class="grid"><article class="card"><div class="card-top"><div class="term">Growth in early childhood</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Growth is slower than in infancy, and body proportions gradually become more adultlike.</div><div class="mini">The torso lengthens, and the head becomes smaller in proportion to the rest of the body.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A preschooler becomes taller and leaner instead of keeping a toddler&#x27;s rounder body proportions.</div></article><article class="card"><div class="card-top"><div class="term">Healthy eating habits</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Offer balanced meals and recognize that appetite can vary without turning food into a power struggle.</div><div class="mini">Keep mealtimes pleasant, limit sugary snacks, and avoid bribing children with dessert.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A caregiver offers a nutritious lunch and lets a child respond to hunger and fullness rather than insisting on a clean plate.</div></article><article class="card"><div class="card-top"><div class="term">Prefrontal cortex</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">The brain area behind the forehead that supports planning, emotional regulation, and control of behavior.</div><div class="mini">Maturation and practice help children think ahead and manage impulses.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child pauses before grabbing a game piece and thinks about whose turn comes next.</div></article><article class="card"><div class="card-top"><div class="term">Corpus callosum</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">The bundle of nerve fibers connecting the brain&#x27;s left and right hemispheres.</div><div class="mini">Growth during early childhood supports coordination between the two sides.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child increasingly coordinates information and movements that involve both brain hemispheres.</div></article><article class="card"><div class="card-top"><div class="term">Gross motor skills</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Movements that mainly use large muscle groups and involve the whole body.</div><div class="mini">Running, hopping, jumping, and balancing provide practice.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Children hop between chalk circles and climb over low obstacles on a playground.</div></article><article class="card"><div class="card-top"><div class="term">Fine motor skills</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Small, controlled movements of the hands and fingers that support drawing, dressing, and manipulating objects.</div><div class="mini">Practice with play dough, beads, drawing tools, and child-safe scissors builds dexterity.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child rolls small pieces of dough and cuts paper along a line.</div></article><article class="card"><div class="card-top"><div class="term">Sleep terrors and nightmares</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Sleep terrors involve sudden intense fear during deep NREM sleep, usually early in the night.</div><div class="mini">Nightmares are frightening dreams associated with REM sleep, often later in the night.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A sleeping child screams early in the night, appears frightened, and is difficult to awaken during a sleep terror.</div></article><article class="card"><div class="card-top"><div class="term">Toilet training readiness</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Physical and emotional readiness matter more than reaching a particular birthday.</div><div class="mini">Signs include staying dry for about two hours, communicating a need to go, and following simple directions.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child notices a wet diaper, asks to use the toilet, and can pull clothing down with little help.</div></article><article class="card"><div class="card-top"><div class="term">Enuresis and encopresis</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">The chapter uses enuresis for repeated urination into bed or clothing after age five; encopresis refers to repeated passage of feces in inappropriate places.</div><div class="mini">These terms describe different elimination concerns; an isolated accident does not establish a diagnosis.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">When reviewing the terms, connect enuresis with urine and encopresis with feces.</div></article><article class="card"><div class="card-top"><div class="term">Body curiosity and privacy</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Curiosity about bodies is common in early childhood. Adults can respond calmly while teaching privacy and appropriate boundaries.</div><div class="mini">Give clear answers without frightening or shaming children.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A caregiver answers a question about body parts using simple language and explains which activities belong in private.</div></article><article class="card"><div class="card-top"><div class="term">Oral health</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Regular brushing with fluoride toothpaste and dental care help prevent tooth decay.</div><div class="mini">Primary teeth matter for eating, speaking, and daily comfort.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A caregiver supervises a preschooler&#x27;s toothbrushing instead of waiting for permanent teeth to appear.</div></article><article class="card"><div class="card-top"><div class="term">Food allergies</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">A food allergy involves an immune response to a particular food, rather than simply disliking its taste or texture.</div><div class="mini">Caregivers need to know a child&#x27;s allergies and be prepared to follow the child&#x27;s emergency plan.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A teacher checks a child&#x27;s documented allergy information before offering a classroom snack.</div></article><article class="card"><div class="card-top"><div class="term">Poisoning prevention</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Medicines and toxic household products should be locked away in their original containers, out of children&#x27;s sight and reach.</div><div class="mini">Original packaging helps prevent confusion; a warning label alone cannot protect a preschooler.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A caregiver stores cleaning products in a locked cabinet instead of pouring them into a drink bottle.</div></article></div></section><section data-chapter="8"><div class="section-head"><h2>Chapter 8</h2><div class="section-count">Cognitive development, learning, language</div></div><div class="grid"><article class="card"><div class="card-top"><div class="term">Preoperational thought and symbols</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">In Piaget&#x27;s preoperational stage, children increasingly use words, images, and objects to represent other things.</div><div class="mini">Symbolic thinking supports pretend play, even while logical operations are still developing.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child pretends that a small cardboard tube is a telescope.</div></article><article class="card"><div class="card-top"><div class="term">Egocentrism</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Difficulty recognizing that another person may see or understand a situation differently.</div><div class="mini">In Piaget&#x27;s theory, this describes a limitation in perspective taking rather than deliberate selfishness.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child looking at one side of a model assumes a person on the opposite side sees the same view.</div></article><article class="card"><div class="card-top"><div class="term">Animism</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Attributing life, feelings, or intentions to objects that are not alive.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child says a toy truck is angry because it has been left outside.</div></article><article class="card"><div class="card-top"><div class="term">Centration</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Focusing on one characteristic of a situation while overlooking other relevant features.</div><div class="mini">Centration can help explain errors on conservation tasks.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child compares two glasses only by their height and ignores their different widths.</div></article><article class="card"><div class="card-top"><div class="term">Conservation</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Understanding that changing an object&#x27;s appearance or arrangement does not necessarily change its quantity.</div><div class="mini">Pouring, spreading out, or dividing something can change its appearance without adding or removing any.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child recognizes that a row of counters still has the same number after the counters are spread farther apart.</div></article><article class="card"><div class="card-top"><div class="term">Zone of proximal development</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">The range of tasks a child can complete with guidance but cannot yet complete independently.</div><div class="mini">Vygotsky emphasized learning through interaction with more knowledgeable adults and peers.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child can solve a new puzzle with a few hints but cannot finish it alone yet.</div></article><article class="card"><div class="card-top"><div class="term">Scaffolding</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Temporary support that helps a child complete a task and is gradually reduced as competence increases.</div><div class="mini">The support changes in response to what the child needs.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A teacher first demonstrates a task, then gives hints, and eventually lets the child work independently.</div></article><article class="card"><div class="card-top"><div class="term">Private speech</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Speech directed to oneself that can help guide thinking and behavior.</div><div class="mini">Vygotsky viewed talking through a task as a useful step toward internal speech.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">While building a tower, a child says, &quot;Big block first. Now a smaller one.&quot;</div></article><article class="card"><div class="card-top"><div class="term">Executive function</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Self-regulatory processes that help a person control impulses, shift strategies, and work toward goals.</div><div class="mini">Inhibitory control and cognitive flexibility continue developing across childhood.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child stops following an old sorting rule and switches to a new rule when the teacher changes the game.</div></article><article class="card"><div class="card-top"><div class="term">Working memory</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">The system used to hold and actively work with information during current conscious activity.</div><div class="mini">Young children have a more limited working memory capacity than older children and adults.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child remembers a short set of directions while collecting the materials needed for an activity.</div></article><article class="card"><div class="card-top"><div class="term">Fast-mapping</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Rapidly connecting a new word with a concept, often after very limited exposure.</div><div class="mini">A quick initial connection supports vocabulary growth; understanding can deepen with later experience.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">After hearing a teacher name an unfamiliar tool, a child connects the new word with that object.</div></article><article class="card"><div class="card-top"><div class="term">Overregularization</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Applying a grammar rule to a word that is an exception to the rule.</div><div class="mini">These errors can show that a child has learned a rule and is trying to use it.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">After learning to add -ed for the past tense, a child says &quot;runned&quot; instead of &quot;ran.&quot;</div></article><article class="card"><div class="card-top"><div class="term">Theory of mind and false belief</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Theory of mind involves understanding other people&#x27;s mental states, including that their beliefs may differ from reality.</div><div class="mini">A false-belief task requires separating what you know from what another person believes.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child sees a toy moved while its owner is away and predicts the owner will first search in the original hiding place.</div></article><article class="card"><div class="card-top"><div class="term">Individualized support for autism</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Children with autism spectrum disorder have differing strengths and support needs. Early support should be tailored to the individual.</div><div class="mini">Support may address communication, learning, daily living, and participation; there is no single approach that suits everyone.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A team chooses communication supports and classroom strategies based on a particular child&#x27;s needs and strengths.</div></article></div></section><section data-chapter="9"><div class="section-head"><h2>Chapter 9</h2><div class="section-count">Social-emotional development, relationships, play</div></div><div class="grid"><article class="card"><div class="card-top"><div class="term">Self-concept and self-esteem</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Self-concept is a description of who you are; self-esteem is an evaluation of your worth or qualities.</div><div class="mini">Preschool self-descriptions often emphasize appearance, preferred activities, and possessions.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">&quot;I have brown hair and I like drawing&quot; describes self-concept; &quot;I feel good about myself&quot; expresses self-esteem.</div></article><article class="card"><div class="card-top"><div class="term">Delayed gratification</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Passing up a smaller immediate reward in order to wait for a larger reward.</div><div class="mini">This is one aspect of developing self-control.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child chooses to wait for two stickers later rather than take one sticker right away.</div></article><article class="card"><div class="card-top"><div class="term">Erikson&#x27;s initiative versus guilt</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Preschoolers develop initiative when they have opportunities to plan activities, make choices, and act on ideas.</div><div class="mini">Encouragement of effort supports initiative; excessive criticism and control can foster guilt.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">An adult helps a child plan a pretend market and accepts small mistakes as part of learning.</div></article><article class="card"><div class="card-top"><div class="term">Gender role socialization</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Learning cultural expectations about gender through messages, reinforcement, and observation.</div><div class="mini">Parents, peers, teachers, and media can all contribute to these expectations.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child notices that certain toys are repeatedly described as being &quot;for boys&quot; or &quot;for girls&quot; and learns a cultural expectation.</div></article><article class="card"><div class="card-top"><div class="term">Authoritative parenting</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">A style combining warmth and responsiveness with clear, reasonable expectations and consistent limits.</div><div class="mini">Parents explain rules and allow discussion while maintaining guidance.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A parent acknowledges a child&#x27;s disappointment, explains the bedtime rule, and follows through calmly.</div></article><article class="card"><div class="card-top"><div class="term">Authoritarian parenting</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">A style emphasizing obedience and strict control, with little warmth or room for discussion.</div><div class="mini">Do not confuse authoritarian with authoritative: both can set limits, but their responsiveness differs.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A parent demands that a child obey immediately and refuses to discuss the reason for a rule.</div></article><article class="card"><div class="card-top"><div class="term">Permissive parenting</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">A style involving warmth and responsiveness but few demands, limits, or consistent expectations.</div><div class="mini">Uninvolved parenting differs by also showing low responsiveness and engagement.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A parent is affectionate but lets a preschooler decide nearly all routines and rules.</div></article><article class="card"><div class="card-top"><div class="term">High-quality child care</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Responsive relationships, manageable group sizes, and appropriate teacher-child ratios support care quality.</div><div class="mini">Consider the everyday interactions and environment, not just the program&#x27;s name or cost.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Teachers notice children&#x27;s cues, respond supportively, and can give individual attention within a manageable group.</div></article><article class="card"><div class="card-top"><div class="term">Parallel play</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Children play alongside one another with similar materials without directly coordinating their activities.</div><div class="mini">Playing nearby is different from sharing a common goal.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Two children sit beside one another with toy animals but create separate games without interacting.</div></article><article class="card"><div class="card-top"><div class="term">Associative play</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Children interact and share materials during play without organizing around one common goal.</div><div class="mini">Distinguish it from parallel play, where direct interaction is limited.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Children talk and exchange art supplies while each makes a separate picture.</div></article><article class="card"><div class="card-top"><div class="term">Cooperative play</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Children coordinate their play to achieve a shared goal, often taking different roles.</div><div class="mini">The common plan distinguishes cooperative from associative play.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">Children assign construction jobs and work together to build one pretend zoo.</div></article><article class="card"><div class="card-top"><div class="term">Conscience</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Internal standards of conduct that help guide a child&#x27;s judgments and behavior.</div><div class="mini">Conscience develops through relationships, self-regulation, and understanding of moral expectations.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child decides to return a borrowed toy because keeping it would feel wrong, even when no adult is watching.</div></article><article class="card"><div class="card-top"><div class="term">Stress and caring relationships</div><button class="mark" aria-label="Mark known" aria-pressed="false">✓</button></div><div class="definition">Prolonged severe stress can disrupt development, while caring, dependable adults can help buffer its effects.</div><div class="mini">Ordinary everyday challenges differ from prolonged severe stress without adequate support.</div><div class="recall-label">Tap card to reveal</div><button class="example-toggle" aria-expanded="false"><span class="show">Example</span><span class="hide">Hide example</span></button><div class="example">A child facing a difficult family situation receives steady comfort and predictable routines from a trusted adult.</div></article></div></section></main>
+
+<script>
+(() => {
+  const guide = document.getElementById('guide');
+  const cards = [...document.querySelectorAll('.card')];
+  const sections = [...document.querySelectorAll('section[data-chapter]')];
+  const chips = [...document.querySelectorAll('.chip')];
+  const recallBtn = document.getElementById('recallBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const knownCount = document.getElementById('knownCount');
+  const totalCount = document.getElementById('totalCount');
+  const progressFill = document.getElementById('progressFill');
+
+  totalCount.textContent = cards.length;
+
+  function updateProgress(){
+    const known = cards.filter(c => c.classList.contains('known')).length;
+    knownCount.textContent = known;
+    progressFill.style.width = `${(known/cards.length)*100}%`;
+  }
+
+  document.addEventListener('click', (e) => {
+    const mark = e.target.closest('.mark');
+    if (mark){
+      e.stopPropagation();
+      const isKnown = mark.closest('.card').classList.toggle('known');
+      mark.setAttribute('aria-pressed', String(isKnown));
+      updateProgress();
+      return;
+    }
+    const toggle = e.target.closest('.example-toggle');
+    if (toggle){
+      e.stopPropagation();
+      const isOpen = toggle.closest('.card').classList.toggle('example-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      return;
+    }
+    const card = e.target.closest('.card');
+    if (card && guide.classList.contains('recall')){
+      card.classList.toggle('revealed');
+    }
+  });
+
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    chips.forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const filter = chip.dataset.filter;
+    sections.forEach(section => {
+      section.classList.toggle('hidden', filter !== 'all' && section.dataset.chapter !== filter);
+    });
+    window.scrollTo({top:0,behavior:'smooth'});
+  }));
+
+  recallBtn.addEventListener('click', () => {
+    const on = guide.classList.toggle('recall');
+    recallBtn.setAttribute('aria-pressed', String(on));
+    cards.forEach(c => { c.tabIndex = on ? 0 : -1; });
+    recallBtn.classList.toggle('active', on);
+    cards.forEach(c => c.classList.remove('revealed'));
+  });
+
+  resetBtn.addEventListener('click', () => {
+    cards.forEach(c => {
+      c.classList.remove('known','revealed','example-open'); c.tabIndex = -1;
+      c.querySelector('.mark').setAttribute('aria-pressed','false');
+      c.querySelector('.example-toggle').setAttribute('aria-expanded','false');
+    });
+    recallBtn.setAttribute('aria-pressed','false');
+    guide.classList.remove('recall');
+    recallBtn.classList.remove('active');
+    chips.forEach(c => c.classList.toggle('active', c.dataset.filter === 'all'));
+    sections.forEach(s => s.classList.remove('hidden'));
+    updateProgress();
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  document.addEventListener('keydown', e => {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('card') && guide.classList.contains('recall')) {
+      e.preventDefault(); e.target.classList.toggle('revealed');
+    }
+  });
+  updateProgress();
+})();
+</script>
+</body>
+</html>
